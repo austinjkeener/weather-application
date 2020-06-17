@@ -15,7 +15,7 @@ $.ajax({
     method: 'GET'
   })
 
-// this is where the data I want from queryAPI will go
+// this is where the data I want from queryAPI will go. I need to remove console.log and append into the 'today' card on web page.
 .then(function(response){
   //these strings contain information about the weather condition of the city.
     console.log(response.name);
@@ -26,7 +26,7 @@ $.ajax({
     console.log("The wind speed is " + response.wind.speed);
 })
 
-// this ajax request is getting the uvi information from the queryURL2
+// this ajax request is getting the uvi information from the queryURL2. I need to remove console.log and append into the 'today' card on web page.
 $.ajax({
   url: queryURL2,
   method: 'GET'
@@ -35,5 +35,14 @@ $.ajax({
   console.log("Your UVI rating is " + response.value); 
 })
 
+//uvi function
+//this is going to be a function for uvi. it is going to show a color that appears when the uvi button is clicked that changes depending on what the current uvi rating is
+function uviCaller(){
+  $(".green").css("background-color", "#00ff00");
+  $(".yellow").css("background-color", "#ffff00");
+  $(".orange").css("background-color", "#ffa500");
+  $(".red").css("background-color", "#ff0000");
+}
 // Function calls
+uviCaller();
 // Event listeners
