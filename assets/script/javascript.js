@@ -16,6 +16,13 @@ $.ajax({
     method: 'GET'
   }).then(function(response){
   //these strings contain information about the weather condition of the city.
+  console.log(response);
+  var weatherImage = $("<img>");
+  $(weatherImage).css("width","100px");
+  var iconCode = response.weather[0].icon;
+  var iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png";
+  weatherImage.attr("src",iconUrl);
+  $(".mycard").append(weatherImage);
     var weather = $("<p>");
     $(weather).text("");
     $(".weather").append(response.name);
@@ -24,12 +31,13 @@ $.ajax({
     $(".weather").append("Feels like " + response.main.feels_like);
     $(".weather").append("The humidity is " + response.main.humidity);
     $(".weather").append("The humidity is " + response.wind.speed);
-    console.log(response.name);
-    console.log(response.weather[0].main);
-    console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
-    console.log("Feels like " + response.main.feels_like);
-    console.log("The humidity is " + response.main.humidity);
-    console.log("The wind speed is " + response.wind.speed);
+    $(".weather").css("float","");
+    // console.log(response.name);
+    // console.log(response.weather[0].main);
+    // console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
+    // console.log("Feels like " + response.main.feels_like);
+    // console.log("The humidity is " + response.main.humidity);
+    // console.log("The wind speed is " + response.wind.speed);
 })
 
 // this ajax request is getting the uvi information from the queryURL2. I need to remove console.log and append into the 'today' card on web page.
@@ -40,16 +48,6 @@ $.ajax({
   var weather = $("<p>");
   $(weather).text("");
   $(".weather").append("Your UVI rating is " + response.value);
-  console.log("Your UVI rating is " + response.value); 
-  // if (response.value <= 2){
-  //   uviCaller(green);
-  // } else if (response.value >= 3 && <= 5){
-  //   uviCaller(yellow);
-  // }else if (response.value >= 6 && <= 7) {
-  //   uviCaller(orange);
-  // } else if (response.value >= 8 && <= 10) {
-  //   uviCaller(red);
-  // }
 })
 
 //this ajax request is for getting the five day forecast
@@ -73,11 +71,20 @@ $.ajax({
 //uvi function
 //this is going to be a function for uvi. it is going to show a color that appears when the uvi button is clicked that changes depending on what the current uvi rating is
 function uviCaller(){
-  $(".uvi").prepend("<h3>UVI index</h3>");
+  // $(".uvi").prepend("<h3>UVI index</h3>");
   var green = $(".green").css("background-color", "#00ff00");
   var yellow = $(".yellow").css("background-color", "#ffff00");
   var orange = $(".orange").css("background-color", "#ffa500");
   var red = $(".red").css("background-color", "#ff0000");
+  //   if (response.value <= 2){
+  //   return (green);
+  // } else if (response.value >= 3 && <= 5){
+  //   return (yellow);
+  // }else if (response.value >= 6 && <= 7) {
+  //   return (orange);
+  // } else if (response.value >= 8 && <= 10) {
+  //   return (red);
+  // }
 }
 // Function calls
 uviCaller();
