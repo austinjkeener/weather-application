@@ -8,6 +8,7 @@ var queryURL ='https://api.openweathermap.org/data/2.5/weather?q=Atlanta,Georgia
 // below is the url that is going to be used to grab the uvi rating
 var queryURL2 = 'https://api.openweathermap.org/data/2.5/uvi?appid=5c3e3f0f93f71de6ee35b8c58f101473&lat=-29.25351&lon=-92.50555';
 // Function definitions
+var queryURL3 = 'https://api.openweathermap.org/data/2.5/forecast?q=Atlanta,Georgia&appid=5c3e3f0f93f71de6ee35b8c58f101473';
 
 // this is me calling queryURL api so that I can get information from it
 $.ajax({
@@ -49,6 +50,24 @@ $.ajax({
   // } else if (response.value >= 8 && <= 10) {
   //   uviCaller(red);
   // }
+})
+
+//this ajax request is for getting the five day forecast
+$.ajax({
+  url: queryURL3,
+  method: 'GET'
+}).then(function(response){
+  console.log("The current five day forecast is below.")
+  console.log(response.list[0].dt_txt);
+  console.log(response.list[0]);
+  console.log(response.list[8].dt_txt);
+  console.log(response.list[8]);
+  console.log(response.list[16].dt_txt);
+  console.log(response.list[16]);
+  console.log(response.list[24].dt_txt);
+  console.log(response.list[24]);
+  console.log(response.list[32].dt_txt);
+  console.log(response.list[32]);
 })
 
 //uvi function
