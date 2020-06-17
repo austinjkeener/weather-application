@@ -6,7 +6,7 @@
 // below this line is what i am using to get the current weather conditions
 var queryURL ='https://api.openweathermap.org/data/2.5/weather?q=Atlanta,Georgia&appid=5c3e3f0f93f71de6ee35b8c58f101473';
 // below is the url that is going to be used to grab the uvi rating
-var queryURL2 = 'http://api.openweathermap.org/data/2.5/uvi?appid=5c3e3f0f93f71de6ee35b8c58f101473&lat=-29.25351&lon=-92.50555';
+var queryURL2 = 'https://api.openweathermap.org/data/2.5/uvi?appid=5c3e3f0f93f71de6ee35b8c58f101473&lat=-29.25351&lon=-92.50555';
 // Function definitions
 
 // this is me calling queryURL api so that I can get information from it
