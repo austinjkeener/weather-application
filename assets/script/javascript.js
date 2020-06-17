@@ -38,6 +38,7 @@ $.ajax({
 //uvi function
 //this is going to be a function for uvi. it is going to show a color that appears when the uvi button is clicked that changes depending on what the current uvi rating is
 function uviCaller(){
+  $(".uvi").prepend("<h3>UVI index</h3>");
   $(".green").css("background-color", "#00ff00");
   $(".yellow").css("background-color", "#ffff00");
   $(".orange").css("background-color", "#ffa500");
