@@ -13,11 +13,16 @@ var queryURL2 = 'https://api.openweathermap.org/data/2.5/uvi?appid=5c3e3f0f93f71
 $.ajax({
     url: queryURL,
     method: 'GET'
-  })
-
-// this is where the data I want from queryAPI will go. I need to remove console.log and append into the 'today' card on web page.
-.then(function(response){
+  }).then(function(response){
   //these strings contain information about the weather condition of the city.
+    var weather = $("<p>");
+    $(weather).text("");
+    $(".weather").append(response.name);
+    $(".weather").append(response.weather[0].main);
+    $(".weather").append(moment().format('MMMM Do YYYY, h:mm:ss a'));
+    $(".weather").append("Feels like " + response.main.feels_like);
+    $(".weather").append("The humidity is " + response.main.humidity);
+    $(".weather").append("The humidity is " + response.wind.speed);
     console.log(response.name);
     console.log(response.weather[0].main);
     console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
@@ -31,18 +36,29 @@ $.ajax({
   url: queryURL2,
   method: 'GET'
 }).then(function(response){
-  //these strings contain information about the weather condition of the city.
+  var weather = $("<p>");
+  $(weather).text("");
+  $(".weather").append("Your UVI rating is " + response.value);
   console.log("Your UVI rating is " + response.value); 
+  // if (response.value <= 2){
+  //   uviCaller(green);
+  // } else if (response.value >= 3 && <= 5){
+  //   uviCaller(yellow);
+  // }else if (response.value >= 6 && <= 7) {
+  //   uviCaller(orange);
+  // } else if (response.value >= 8 && <= 10) {
+  //   uviCaller(red);
+  // }
 })
 
 //uvi function
 //this is going to be a function for uvi. it is going to show a color that appears when the uvi button is clicked that changes depending on what the current uvi rating is
 function uviCaller(){
   $(".uvi").prepend("<h3>UVI index</h3>");
-  $(".green").css("background-color", "#00ff00");
-  $(".yellow").css("background-color", "#ffff00");
-  $(".orange").css("background-color", "#ffa500");
-  $(".red").css("background-color", "#ff0000");
+  var green = $(".green").css("background-color", "#00ff00");
+  var yellow = $(".yellow").css("background-color", "#ffff00");
+  var orange = $(".orange").css("background-color", "#ffa500");
+  var red = $(".red").css("background-color", "#ff0000");
 }
 // Function calls
 uviCaller();

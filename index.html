@@ -10,103 +10,131 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <!--Seach for a city in the search bar below-->
-            <div class="col">
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search city</button>
-                </form>
-            <!--Search history-->
-        <div class="row">
-            <div class="col"><a href="#">This is where the search history will be saved. When a previously searched city is clicked it will display that cities weather conditions.</a>
-            <ol>
-                <li><a href="">City 1</a></li>
-                <li><a href="">City 2</a></li>
-                <li><a href="">City 3</a></li>
-                <li><a href="">City 4</a></li>
-                <li><a href="">City 5</a></li>
-            </ol>
-            </div>
-        </div>
-            </div>
-
-            <!--Here is a display of weather conditions for the current day and the next day.-->
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="" class="card-img-top" alt="icon representation of weather conditions">
-                    <div class="card-body">
-                        <h5 class="card-title">Todays weather</h5>
-                        <!--Figure out how to build a UV index-->
-                        <p class="card-text">city name, the date, the temperature, the humidity, the wind speed, and the UV index.</p>
-                        <div class="uvi">
-                            <div class="green" style="width:100px; height:100px;"></div>
-                            <div class="yellow" style="width:100px; height:100px;"></div>
-                            <div class="orange" style="width:100px; height:100px;"></div>
-                            <div class="red" style="width:100px; height:100px;"></div>
+    <main>
+        <div class="container">
+            <div class="row">
+                <section>
+                    <!--Seach for a city in the search bar below-->
+                    <div class="col">
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search city</button>
+                        </form>
+                        <!--Search history-->
+                        <div class="row">
+                            <div class="col"><a href="#">This is where the search history will be saved. When a
+                                    previously
+                                    searched city is clicked it will display that cities weather conditions.</a>
+                                <ol>
+                                    <li><a href="">City 1</a></li>
+                                    <li><a href="">City 2</a></li>
+                                    <li><a href="">City 3</a></li>
+                                    <li><a href="">City 4</a></li>
+                                    <li><a href="">City 5</a></li>
+                                </ol>
+                            </div>
                         </div>
-                        <a href="#" class="btn btn-primary">Click here for more information.</a>
                     </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="" class="card-img-top" alt="icon representation of weather conditions">
-                    <div class="card-body">
-                        <h5 class="card-title">Day 1</h5>
-                        <!--Figure out how to build a UV index-->
-                        <p class="card-text">city name, the date, the temperature, the humidity, the wind speed, and the UV index.</p>
-                        <a href="#" class="btn btn-primary">Click here for more information.</a>
+                </section>
+                <!--Here is a display of weather conditions for the current day and the next day.-->
+                <section>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="" class="card-img-top" alt="icon representation of weather conditions">
+                            <div class="card-body">
+                                <h5 class="card-title">Todays weather</h5>
+                                <!--Figure out how to build a UV index-->
+                                <p class="card-text"></p>
+                                <div class="weather"></div>
+                                <div class="uvi">
+                                    <div class="green" style="width:100px; height:100px;"></div>
+                                    <div class="yellow" style="width:100px; height:100px;"></div>
+                                    <div class="orange" style="width:100px; height:100px;"></div>
+                                    <div class="red" style="width:100px; height:100px;"></div>
+                                </div>
+                                <a href="#" class="btn btn-primary">Click here for more information.</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="" class="card-img-top" alt="icon representation of weather conditions">
-                    <div class="card-body">
-                        <h5 class="card-title">Day 2</h5>
-                        <!--Figure out how to build a UV index-->
-                        <p class="card-text">city name, the date, the temperature, the humidity, the wind speed, and the UV index.</p>
-                        <a href="#" class="btn btn-primary">Click here for more information.</a>
+                </section>
+                <section>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="" class="card-img-top" alt="icon representation of weather conditions">
+                            <div class="card-body">
+                                <h5 class="card-title">Day 1</h5>
+                                <!--Figure out how to build a UV index-->
+                                <p class="card-text">city name, the date, the temperature, the humidity, the wind speed,
+                                    and
+                                    the UV index.</p>
+                                <a href="#" class="btn btn-primary">Click here for more information.</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="" class="card-img-top" alt="icon representation of weather conditions">
-                    <div class="card-body">
-                        <h5 class="card-title">Day 3</h5>
-                        <!--Figure out how to build a UV index-->
-                        <p class="card-text">city name, the date, the temperature, the humidity, the wind speed, and the UV index.</p>
-                        <a href="#" class="btn btn-primary">Click here for more information.</a>
+                </section>
+                <section>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="" class="card-img-top" alt="icon representation of weather conditions">
+                            <div class="card-body">
+                                <h5 class="card-title">Day 2</h5>
+                                <!--Figure out how to build a UV index-->
+                                <p class="card-text">city name, the date, the temperature, the humidity, the wind speed,
+                                    and
+                                    the UV index.</p>
+                                <a href="#" class="btn btn-primary">Click here for more information.</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="" class="card-img-top" alt="icon representation of weather conditions">
-                    <div class="card-body">
-                        <h5 class="card-title">Day 4</h5>
-                        <!--Figure out how to build a UV index-->
-                        <p class="card-text">city name, the date, the temperature, the humidity, the wind speed, and the UV index.</p>
-                        <a href="#" class="btn btn-primary">Click here for more information.</a>
+                </section>
+                <section>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="" class="card-img-top" alt="icon representation of weather conditions">
+                            <div class="card-body">
+                                <h5 class="card-title">Day 3</h5>
+                                <!--Figure out how to build a UV index-->
+                                <p class="card-text">city name, the date, the temperature, the humidity, the wind speed,
+                                    and
+                                    the UV index.</p>
+                                <a href="#" class="btn btn-primary">Click here for more information.</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="" class="card-img-top" alt="icon representation of weather conditions">
-                    <div class="card-body">
-                        <h5 class="card-title">Day 5</h5>
-                        <!--Figure out how to build a UV index-->
-                        <p class="card-text">city name, the date, the temperature, the humidity, the wind speed, and the UV index.</p>
-                        <a href="#" class="btn btn-primary">Click here for more information.</a>
+                </section>
+                <section>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="" class="card-img-top" alt="icon representation of weather conditions">
+                            <div class="card-body">
+                                <h5 class="card-title">Day 4</h5>
+                                <!--Figure out how to build a UV index-->
+                                <p class="card-text">city name, the date, the temperature, the humidity, the wind speed,
+                                    and
+                                    the UV index.</p>
+                                <a href="#" class="btn btn-primary">Click here for more information.</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
+                <section>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="" class="card-img-top" alt="icon representation of weather conditions">
+                            <div class="card-body">
+                                <h5 class="card-title">Day 5</h5>
+                                <!--Figure out how to build a UV index-->
+                                <p class="card-text">city name, the date, the temperature, the humidity, the wind speed,
+                                    and
+                                    the UV index.</p>
+                                <a href="#" class="btn btn-primary">Click here for more information.</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
-    </div>
+    </main>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/script/javascript.js"></script>
