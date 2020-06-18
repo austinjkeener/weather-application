@@ -15,13 +15,59 @@ $.ajax({
   url: queryURL3,
   method: 'GET'
 }).then(function(response){
+  console.log(response);
   // this is a list of all of the parameters that i want specified to go onto my website. they are being appended to a div called five-day which is where the information is being displayed to the user
   $(".five-day").append("The current five day forecast is below.")
   $(".five-day").append(response.list[0].dt_txt.split(' ')[0]);
+  $(".five-day").append(response.list[0].main.temp);
+  $(".five-day").append(response.list[0].main.humidity);
+  var weatherImage = $("<img>");
+  //some dynamic styling to the weather icon and where i am calling the weather icon from the api.
+$(weatherImage).css("width","100px");
+var iconCode = response.list[0].weather[0].icon;
+var iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png";
+weatherImage.attr("src",iconUrl);
+$(".five-day").append(weatherImage);
   $(".five-day").append(response.list[8].dt_txt.split(' ')[0]);
+  $(".five-day").append(response.list[8].main.temp);
+  $(".five-day").append(response.list[8].main.humidity);
+  var weatherImage = $("<img>");
+  //some dynamic styling to the weather icon and where i am calling the weather icon from the api.
+$(weatherImage).css("width","100px");
+var iconCode = response.list[8].weather[0].icon;
+var iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png";
+weatherImage.attr("src",iconUrl);
+$(".five-day").append(weatherImage);
   $(".five-day").append(response.list[16].dt_txt.split(' ')[0]);
+  $(".five-day").append(response.list[16].main.temp);
+  $(".five-day").append(response.list[16].main.humidity);
+  var weatherImage = $("<img>");
+  //some dynamic styling to the weather icon and where i am calling the weather icon from the api.
+$(weatherImage).css("width","100px");
+var iconCode = response.list[16].weather[0].icon;
+var iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png";
+weatherImage.attr("src",iconUrl);
+$(".five-day").append(weatherImage);
   $(".five-day").append(response.list[24].dt_txt.split(' ')[0]);
+  $(".five-day").append(response.list[24].main.temp);
+  $(".five-day").append(response.list[24].main.humidity);
+  var weatherImage = $("<img>");
+  //some dynamic styling to the weather icon and where i am calling the weather icon from the api.
+$(weatherImage).css("width","100px");
+var iconCode = response.list[24].weather[0].icon;
+var iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png";
+weatherImage.attr("src",iconUrl);
+$(".five-day").append(weatherImage);
   $(".five-day").append(response.list[32].dt_txt.split(' ')[0]);
+  $(".five-day").append(response.list[32].main.temp);
+  $(".five-day").append(response.list[32].main.humidity);
+  var weatherImage = $("<img>");
+  //some dynamic styling to the weather icon and where i am calling the weather icon from the api.
+$(weatherImage).css("width","100px");
+var iconCode = response.list[32].weather[0].icon;
+var iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png";
+weatherImage.attr("src",iconUrl);
+$(".five-day").append(weatherImage);
 })
 
 }
