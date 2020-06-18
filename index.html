@@ -12,115 +12,63 @@
 <body>
     <main>
         <div class="container">
-            <div class="row">
-                <section>
+                <section style="background-color: whitesmoke; padding: 20px; margin: 20px auto;">
                     <!--Seach for a city in the search bar below-->
-                    <div class="col">
-                        <form class="form-inline my-2 my-lg-0">
+                    <div class="row" style="margin:20px auto; background-color: white; padding: 50px;">
+                    <div class="col" style="display:inline-block;">
+                        <form class="form-inline my-2 my-lg-0" style="display: inline-block; float:right;">
                             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search city</button>
+                            <button class="btn btn-outline-success my-2 my-sm-0 submitbtn" type="submit">Search city</button>
                         </form>
+                    </div>
                         <!--Search history-->
-                        <div class="row">
-                            <div class="col"><a href="#">This is where the search history will be saved. When a
-                                    previously
-                                    searched city is clicked it will display that cities weather conditions.</a>
-                                <ol>
-                                    <li><a href="">City 1</a></li>
-                                    <li><a href="">City 2</a></li>
-                                    <li><a href="">City 3</a></li>
-                                    <li><a href="">City 4</a></li>
-                                    <li><a href="">City 5</a></li>
+                            <div class="col" style="display:inline-block;">
+                                <h1><a href="#">Search History</a></h1>
+                                <ol id="history">
                                 </ol>
                             </div>
-                        </div>
                     </div>
                 </section>
                 <!--Here is a display of weather conditions for the current day and the next day.-->
-                <section>
+                <section style="background-color:whitesmoke; padding: 20px;">
                     <div class="col">
                         <div class="card mycard">
                             <div class="card-body">
-                                <h5 class="card-title">Todays weather</h5>
+                                <h5 class="card-title">Today</h5>
                                 <!--Figure out how to build a UV index-->
                                 <p class="card-text"></p>
                                 <div class="weather"></div>
                                 <div class="uvi">
-                                    <h4><a href="#">View UVI index</a></h4>
-                                    <div class="green hide" style="width:100px; height:100px;">Moderate<br>3-5</div>
-                                    <div class="yellow hide" style="width:100px; height:100px;">High<br>6-7</div>
-                                    <div class="orange hide" style="width:100px; height:100px;">Very High<br>8-10</div>
-                                    <div class="red hide" style="width:100px; height:100px;">Extreme<br>11+</div>
+                                    <h4>UVI index</h4>
+                                    <div class="green hide" style="width:100px; height:100px; display:inline-block;">Moderate<br>3-5</div>
+                                    <div class="yellow hide" style="width:100px; height:100px; display:inline-block;">High<br>6-7</div>
+                                    <div class="orange hide" style="width:100px; height:100px; display:inline-block;">Very High<br>8-10</div>
+                                    <div class="red hide" style="width:100px; height:100px; display:inline-block;">Extreme<br>11+</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section>
+                <section style="background-color:whitesmoke; padding: 20px;">
                     <div class="col">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card mycard">
                             <div class="card-body">
-                                <h5 class="card-title">Day 1</h5>
+                                <h5 class="card-title">Five day forecast</h5>
                                 <!--Figure out how to build a UV index-->
-                                <p class="card-text">city name, the date, the temperature, the humidity, the wind speed,
-                                    and
-                                    the UV index.</p>
+                                <p class="card-text"></p>
+                                <div class="five-day"></div>
+                                <div class="uvi">
+                                    <h4>UVI index</h4>
+                                    <div class="green hide" style="width:100px; height:100px; display:inline-block;">Moderate<br>3-5</div>
+                                    <div class="yellow hide" style="width:100px; height:100px; display:inline-block;">High<br>6-7</div>
+                                    <div class="orange hide" style="width:100px; height:100px; display:inline-block;">Very High<br>8-10</div>
+                                    <div class="red hide" style="width:100px; height:100px; display:inline-block;">Extreme<br>11+</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Day 2</h5>
-                                <!--Figure out how to build a UV index-->
-                                <p class="card-text">city name, the date, the temperature, the humidity, the wind speed,
-                                    and
-                                    the UV index.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Day 3</h5>
-                                <!--Figure out how to build a UV index-->
-                                <p class="card-text">city name, the date, the temperature, the humidity, the wind speed,
-                                    and
-                                    the UV index.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Day 4</h5>
-                                <!--Figure out how to build a UV index-->
-                                <p class="card-text">city name, the date, the temperature, the humidity, the wind speed,
-                                    and
-                                    the UV index.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Day 5</h5>
-                                <!--Figure out how to build a UV index-->
-                                <p class="card-text">city name, the date, the temperature, the humidity, the wind speed,
-                                    and
-                                    the UV index.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                </div> 
             </div>
         </div>
     </main>
