@@ -5,12 +5,12 @@ By Austin Keener <br>
 ### 1. Usage <br>
 ### 2. License<br>
 
-link: 
+link: https://austingraphicandweb.github.io/weather-application/
 <hr>
 
 ## Screenshot
 
-![screenshot]()
+![screenshot](/assets/screen-shot.png)
 
 <hr>
 
