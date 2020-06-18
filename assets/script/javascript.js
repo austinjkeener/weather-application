@@ -5,150 +5,86 @@
 // Global variables
 var city
 var storage = [];
-// below this line is what i am using to get the current weather conditions
-// var queryURL ='https://api.openweathermap.org/data/2.5/weather?q=&appid=5c3e3f0f93f71de6ee35b8c58f101473';
-// below is the url that is going to be used to grab the uvi rating
-// var queryURL2 = 'https://api.openweathermap.org/data/2.5/uvi?appid=5c3e3f0f93f71de6ee35b8c58f101473&lat=-29.25351&lon=-92.50555';
-// Function definitions
-// var queryURL3 = 'https://api.openweathermap.org/data/2.5/forecast?q=Atlanta,Georgia&appid=5c3e3f0f93f71de6ee35b8c58f101473';
 
-// this is me calling queryURL api so that I can get information from it
-// $.ajax({
-//     url: queryURL,
-//     method: 'GET'
-//   }).then(function(response){
-//   //these strings contain information about the weather condition of the city.
-//   console.log(response);
-//   var weatherImage = $("<img>");
-//   $(weatherImage).css("width","100px");
-//   var iconCode = response.weather[0].icon;
-//   var iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png";
-//   weatherImage.attr("src",iconUrl);
-//   $(".mycard").append(weatherImage);
-//     var weather = $("<p>");
-//     $(weather).text("");
-//     $(".weather").append(response.name);
-//     $(".weather").append(response.weather[0].main);
-//     $(".weather").append(moment().format('MMMM Do YYYY, h:mm:ss a'));
-//     $(".weather").append("Feels like " + response.main.feels_like);
-//     $(".weather").append("The humidity is " + response.main.humidity);
-//     $(".weather").append("The humidity is " + response.wind.speed);
-//     $(".weather").css("float","");
-//     console.log(response.name);
-//     console.log(response.weather[0].main);
-//     console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
-//     console.log("Feels like " + response.main.feels_like);
-//     console.log("The humidity is " + response.main.humidity);
-//     console.log("The wind speed is " + response.wind.speed);
-// })
-
-// this ajax request is getting the uvi information from the queryURL2. I need to remove console.log and append into the 'today' card on web page.
-// $.ajax({
-//   url: queryURL2,
-//   method: 'GET'
-// }).then(function(response){
-//   var weather = $("<p>");
-//   $(weather).text("");
-//   $(".weather").append("Your UVI rating is " + response.value);
-// })
-
-//this ajax request is for getting the five day forecast
-var queryURL3 = 'https://api.openweathermap.org/data/2.5/forecast?q=Atlanta,Georgia&appid=5c3e3f0f93f71de6ee35b8c58f101473';
-$.ajax({
-  url: queryURL3,
-  method: 'GET'
-}).then(function(response){
-  // console.log("The current five day forecast is below.")
-  // console.log(response.list[0].dt_txt);
-  // console.log(response.list[0]);
-  // console.log(response.list[8].dt_txt);
-  // console.log(response.list[8]);
-  // console.log(response.list[16].dt_txt);
-  // console.log(response.list[16]);
-  // console.log(response.list[24].dt_txt);
-  // console.log(response.list[24]);
-  // console.log(response.list[32].dt_txt);
-  // console.log(response.list[32]);
-})
-
+// This is the function that is defining my five day forecast
 function fiveDay(fiveDay){
-  console.log(fiveDay);
+  // this is the api that is being used to get information from the open weather map servers
   var queryURL3 = 'https://api.openweathermap.org/data/2.5/forecast?q=' + fiveDay + '&appid=5c3e3f0f93f71de6ee35b8c58f101473';
+  // this is the ajax request that is being used to call the servers so that I can set up parameters in the .then call back function to specify what information that I want on my website.
 $.ajax({
   url: queryURL3,
   method: 'GET'
 }).then(function(response){
-  console.log(response);
+  // this is a list of all of the parameters that i want specified to go onto my website. they are being appended to a div called five-day which is where the information is being displayed to the user
   $(".five-day").append("The current five day forecast is below.")
   $(".five-day").append(response.list[0].dt_txt.split(' ')[0]);
-  $(".five-day").append(response.list[0]);
   $(".five-day").append(response.list[8].dt_txt.split(' ')[0]);
-  $(".five-day").append(response.list[8]);
   $(".five-day").append(response.list[16].dt_txt.split(' ')[0]);
-  $(".five-day").append(response.list[16]);
   $(".five-day").append(response.list[24].dt_txt.split(' ')[0]);
-  $(".five-day").append(response.list[24]);
   $(".five-day").append(response.list[32].dt_txt.split(' ')[0]);
-  $(".five-day").append(response.list[32]);
 })
 
 }
 
-//uvi function
-//this is going to be a function for uvi. it is going to show a color that appears when the uvi button is clicked that changes depending on what the current uvi rating is
+//this has been programmed to show the colors of the uvi spectrum on the web page. It correllates with the html page where the actual UVI index is being displayed
 function uviCaller(){
-  // $(".uvi").prepend("<h3>UVI index</h3>");
-  var green = $(".green").css("background-color", "#00ff00");
-  var yellow = $(".yellow").css("background-color", "#ffff00");
-  var orange = $(".orange").css("background-color", "#ffa500");
-  var red = $(".red").css("background-color", "#ff0000");
-  //   if (response.value <= 2){
-  //   return (green);
-  // } else if (response.value >= 3 && <= 5){
-  //   return (yellow);
-  // }else if (response.value >= 6 && <= 7) {
-  //   return (orange);
-  // } else if (response.value >= 8 && <= 10) {
-  //   return (red);
-  // }
+$(".green").css("background-color", "#00ff00");
+$(".yellow").css("background-color", "#ffff00");
+$(".orange").css("background-color", "#ffa500");
+$(".red").css("background-color", "#ff0000");
 }
 
+// this is the programming for the submit button at the top of the web page. All of the ajax information is tied into this function so that when it is clicked, the defined parameters and variables are called and run to generate the information that i have specified in the algorithims used in my script
 function submitBtn(){
+  // assigning the submit button class to a variable
   var submitBtn = document.querySelector(".submitbtn");
+  // using the submit buton variable to add a click event and callback function to my script. the callback function trims and inserts the search params defined by the user, and converts them to an object for storage.
   submitBtn.addEventListener("click", function(event){
     event.preventDefault();
-    var searchApi = $(".form-control").val().trim(); //.trim removes blank space within string while using 
-    console.log(searchApi);
+    // this is defining what happens when the user enters information into the search box at the top of the page.
+    var searchApi = $(".form-control").val().trim(); //.trim removes blank space within a string
     city = searchApi;
     storage.push(city);
+    // this is where i am turning my search parameters into indexes for an array so that they can be stored in localStorage
     localStorage.setItem("store",JSON.stringify(storage));
+    // here i am calling the getWeather function which shows me the information defined for the current day, and the fiveDay function which shows me the information defined within the function that comes from the information stored where i can see it in my console.log within an object
     getWeather(city);
     fiveDay(city);
   })
 }
 
+// this is where i am changing my stored information into information that can be put onto the webpage itself.
 function getStorage(){
+  // i am emptying out the div using the .empty function
   $("#history").empty();
+  // json parse is allowing me to get the objects stored within the storage array
   var storageArray = JSON.parse(localStorage.getItem("store"));
-  console.log(storageArray);
+  // this is a for loop that is being used to comb through the storageArray
   for(i=0;i<storageArray.length;i++){
+    // i am defining a variable that is going to create list elements showing user input content
     var historyLi = $("<li>").text(storageArray[i]);
+    //I am appending the li elements with user input into the history ordered list elements on the web page to show at the top next to the search bar
     $("#history").append(historyLi);
   }
 }
 
-console.log(localStorage);
+//this is the function that shows the 'today forecast'
 function getWeather(city){
+  // query url that is used to get the information from the remote server
   var queryURL ='https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=5c3e3f0f93f71de6ee35b8c58f101473';
+  // this is the ajax request that is being used to call the remote servers to get information from them using the provided url with my api key
   $.ajax(
     {
     url: queryURL,
     method: "GET"
     }
+    // this is defining what happens after the call is made to the remote serer through ajax
   ).then(function(response){
+    // empty weather div
     $(".weather").empty();
-    console.log(response);
+    // paragraph tag with city name
     var weather = $("<p>").text(response.name);
+    // these are specified search params within the object to pull information requested in assignment
     $(".weather").append(weather);
     $(".weather").append(response.name);
     $(".weather").append(response.weather[0].main);
@@ -157,24 +93,35 @@ function getWeather(city){
     $(".weather").append("The humidity is " + response.main.humidity);
     $(".weather").append("The wind speed is " + response.wind.speed);
     $(".weather").css("float","");
+    // i am tying the uvi function to this function so that lat and lon works by using the ajax request in this function to get the actual coordinates, and then plugging them in down below in uvi();
     uvi(response.coord.lat, response.coord.lon);
+    // this is where i am getting the weather icon from openweathermap
+      var weatherImage = $("<img>");
+      //some dynamic styling to the weather icon and where i am calling the weather icon from the api.
+  $(weatherImage).css("width","100px");
+  var iconCode = response.weather[0].icon;
+  var iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png";
+  weatherImage.attr("src",iconUrl);
+  $(".mycard").append(weatherImage);
   })
 }
 
+// this is the function that is defining the uvi rating
 function uvi(lat,lon){
-console.log(lat,lon);
+  // this is the query url that has my api key and defines what I want to search for on their website. I have also concatonated the lat and lon into the url. the information that defines those two variables comes from the getWeather(); function.
 var queryURL2 = 'https://api.openweathermap.org/data/2.5/uvi?appid=5c3e3f0f93f71de6ee35b8c58f101473&lat=' + lat + '&lon=' + lon;
+// ajax request to get the actual information from the remote server
 $.ajax({
   url: queryURL2,
   method: 'GET'
+  // below is what is to happen after the information has been received.
 }).then(function(response){
-  console.log(response);
-  var weather = $("<p>");
-  $(weather).text("");
+  // this is saying that it is going to write text on the web page that shows what the current uvi index is above the color rating scale
   $(".weather").append("Your UVI rating is " + response.value);
 })
 }
 // Function calls
+// these are the functions being called
 uviCaller();
 submitBtn();
 getStorage();
