@@ -16,7 +16,7 @@ link: https://austingraphicandweb.github.io/weather-application/
 
 
 ## Usage
-<i><i>
+<i>This is a weather application. The weather application is made to show weather statistics from different cities around the globe. you can search at the top by city, and see a history of your results on the right hand side. The forecast for the current day and the five day forecast are printed below along with a weather icon.<i>
 <hr>
 
 ## Licensing
