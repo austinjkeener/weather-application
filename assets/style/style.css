@@ -6,3 +6,6 @@ Weather application stylesheet
 /* .hide {
     display:none;
 } */
+body {
+    background-image: url(/assets/clouds.jpg)
+}
