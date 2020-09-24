@@ -12,66 +12,76 @@
 <body style="background-image: url(./assets/clouds.jpg);">
     <main>
         <div class="container">
-                <section style="background-color: whitesmoke; padding: 20px; margin: 20px auto;">
-                    <!--Seach for a city in the search bar below-->
-                    <div class="row" style="margin:20px auto; background-color: white; padding: 50px;">
+            <section style="background-color: whitesmoke; padding: 20px; margin: 20px auto;">
+                <!--Seach for a city in the search bar below-->
+                <div class="row" style="margin:20px auto; background-color: white; padding: 50px;">
                     <div class="col" style="display:inline-block;">
                         <form class="form-inline my-2 my-lg-0" style="display: inline-block;">
                             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0 submitbtn" type="submit">Search city</button>
+                            <button class="btn btn-outline-success my-2 my-sm-0 submitbtn" type="submit">Search
+                                city</button>
                         </form>
                     </div>
-                        <!--Search history-->
-                            <div class="col" style="display:inline-block;">
-                                <!-- This is where the history for the searches goes -->
-                                <h1><a href="#">Search History</a></h1>
-                                <ol id="history">
-                                </ol>
-                            </div>
+                    <!--Search history-->
+                    <div class="col" style="display:inline-block;">
+                        <!-- This is where the history for the searches goes -->
+                        <h1><a href="#">Search History</a></h1>
+                        <ol id="history">
+                        </ol>
                     </div>
-                </section>
-                <!--Here is a display of weather conditions for the current day and the next day.-->
-                <section style="background-color:whitesmoke; padding: 20px;">
-                    <div class="col">
-                        <div class="card mycard">
-                            <div class="card-body">
-                                <h5 class="card-title">Today</h5>
-                                <!--Figure out how to build a UV index-->
-                                <p class="card-text"></p>
-                                <div class="weather"></div>
-                                <div class="uvi">
-                                    <h4>UVI index</h4>
-                                    <div class="green hide" style="width:100px; height:100px; display:inline-block;">Moderate<br>3-5</div>
-                                    <div class="yellow hide" style="width:100px; height:100px; display:inline-block;">High<br>6-7</div>
-                                    <div class="orange hide" style="width:100px; height:100px; display:inline-block;">Very High<br>8-10</div>
-                                    <div class="red hide" style="width:100px; height:100px; display:inline-block;">Extreme<br>11+</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section style="background-color:whitesmoke; padding: 20px;">
-                    <div class="col">
-                        <div class="card mycard">
-                            <div class="card-body">
-                                <h5 class="card-title">Five day forecast</h5>
-                                <!--Figure out how to build a UV index-->
-                                <p class="card-text"></p>
-                                <!--This is where the information for five day forecast is stored-->
-                                <div class="five-day"></div>
-                                <div class="uvi">
-                                    <h4>UVI index</h4>
-                                    <div class="green hide" style="width:100px; height:100px; display:inline-block;">Moderate<br>3-5</div>
-                                    <div class="yellow hide" style="width:100px; height:100px; display:inline-block;">High<br>6-7</div>
-                                    <div class="orange hide" style="width:100px; height:100px; display:inline-block;">Very High<br>8-10</div>
-                                    <div class="red hide" style="width:100px; height:100px; display:inline-block;">Extreme<br>11+</div>
-                                </div>
+                </div>
+            </section>
+            <!--Here is a display of weather conditions for the current day and the next day.-->
+            <section style="background-color:whitesmoke; padding: 20px;">
+                <div class="col">
+                    <div class="card mycard">
+                        <div class="card-body">
+                            <h5 class="card-title">Today</h5>
+                            <!--Figure out how to build a UV index-->
+                            <p class="card-text"></p>
+                            <div class="weather"></div>
+                            <div class="uvi">
+                                <h4>UVI index</h4>
+                                <div class="green hide" style="width:100px; height:100px; display:inline-block;">
+                                    Moderate<br>3-5</div>
+                                <div class="yellow hide" style="width:100px; height:100px; display:inline-block;">
+                                    High<br>6-7</div>
+                                <div class="orange hide" style="width:100px; height:100px; display:inline-block;">Very
+                                    High<br>8-10</div>
+                                <div class="red hide" style="width:100px; height:100px; display:inline-block;">
+                                    Extreme<br>11+</div>
                             </div>
                         </div>
                     </div>
-                </section>
-                </div> 
-            </div>
+                </div>
+            </section>
+            <section style="background-color:whitesmoke; padding: 20px;">
+                <div class="col">
+                    <div class="card mycard">
+                        <div class="card-body">
+                            <h5 class="card-title">Five day forecast</h5>
+                            <!--Figure out how to build a UV index-->
+                            <p class="card-text"></p>
+                            <!--This is where the information for five day forecast is stored-->
+                            <div class="five-day-head"></div>
+                            <div class="five-day"></div>
+                            <div class="uvi">
+                                <h4>UVI index</h4>
+                                <div class="green hide" style="width:100px; height:100px; display:inline-block;">
+                                    Moderate<br>3-5</div>
+                                <div class="yellow hide" style="width:100px; height:100px; display:inline-block;">
+                                    High<br>6-7</div>
+                                <div class="orange hide" style="width:100px; height:100px; display:inline-block;">Very
+                                    High<br>8-10</div>
+                                <div class="red hide" style="width:100px; height:100px; display:inline-block;">
+                                    Extreme<br>11+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        </div>
         </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

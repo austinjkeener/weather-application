@@ -17,7 +17,7 @@ $.ajax({
 }).then(function(response){
   console.log(response);
   // this is a list of all of the parameters that i want specified to go onto my website. they are being appended to a div called five-day which is where the information is being displayed to the user
-  $(".five-day").append("The current five day forecast is below.")
+  $(".five-day-head").append("The current five day forecast is below.")
   $(".five-day").append(response.list[0].dt_txt.split(' ')[0]);
   $(".five-day").append(response.list[0].main.temp);
   $(".five-day").append(response.list[0].main.humidity);
