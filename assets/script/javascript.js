@@ -135,10 +135,10 @@ function getWeather(city){
     $(".weather-name").append(response.name);
     $(".weather-date").append(moment().format('MMMM Do YYYY, h:mm:ss a'));
     $(".weather-temp").append(response.weather[0].main);
-    $(".weather").append("Feels like " + response.main.feels_like);
-    $(".weather").append("The humidity is " + response.main.humidity);
-    $(".weather").append("The wind speed is " + response.wind.speed);
-    $(".weather").css("float","");
+    // $(".weather-feelings").append("Feels like " + response.main.feels_like);
+    // $(".weather").append("The humidity is " + response.main.humidity);
+    // $(".weather").append("The wind speed is " + response.wind.speed);
+    // $(".weather").css("float","");
     // i am tying the uvi function to this function so that lat and lon works by using the ajax request in this function to get the actual coordinates, and then plugging them in down below in uvi();
     uvi(response.coord.lat, response.coord.lon);
     // this is where i am getting the weather icon from openweathermap
