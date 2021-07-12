@@ -131,10 +131,10 @@ function getWeather(city){
     // paragraph tag with city name
     var weather = $("<p>").text(response.name);
     // these are specified search params within the object to pull information requested in assignment
-    $(".weather").append(weather);
-    $(".weather").append(response.name);
-    $(".weather").append(response.weather[0].main);
-    $(".weather").append(moment().format('MMMM Do YYYY, h:mm:ss a'));
+    // $(".weather").append(weather);
+    $(".weather-name").append(response.name);
+    $(".weather-date").append(moment().format('MMMM Do YYYY, h:mm:ss a'));
+    $(".weather-temp").append(response.weather[0].main);
     $(".weather").append("Feels like " + response.main.feels_like);
     $(".weather").append("The humidity is " + response.main.humidity);
     $(".weather").append("The wind speed is " + response.wind.speed);
