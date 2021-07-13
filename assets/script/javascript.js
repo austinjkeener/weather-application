@@ -9,18 +9,18 @@ var storage = [];
 // This is the function that is defining my five day forecast
 function fiveDay(fiveDay){
   // this is the api that is being used to get information from the open weather map servers
-  var queryURL3 = 'https://api.openweathermap.org/data/2.5/forecast?q=' + fiveDay + '&appid=5c3e3f0f93f71de6ee35b8c58f101473';
+  var queryURL3 = 'https://api.openweathermap.org/data/2.5/forecast?q=' + fiveDay + '&units=imperial&appid=5c3e3f0f93f71de6ee35b8c58f101473';
   // this is the ajax request that is being used to call the servers so that I can set up parameters in the .then call back function to specify what information that I want on my website.
 $.ajax({
   url: queryURL3,
   method: 'GET'
 }).then(function(response){
-  console.log(response);
+  // console.log(response);
   // this is a list of all of the parameters that i want specified to go onto my website. they are being appended to a div called five-day which is where the information is being displayed to the user
-  $(".five-day-head").append("The current five day forecast is below.")
-  $(".five-day").append(response.list[0].dt_txt.split(' ')[0]);
-  $(".five-day").append(response.list[0].main.temp);
-  $(".five-day").append(response.list[0].main.humidity);
+  $(".five-day-head").append("The current five day forecast is below.");
+  $(".five-day-name").append(response.name);
+  $(".five-day-date").append(response.list[0].dt_txt.split(' ')[0]);
+  $(".five-day-temp").append(response.list[0].main.temp + ' degrees farenheit.');
   var weatherImage = $("<img>");
   //some dynamic styling to the weather icon and where i am calling the weather icon from the api.
 $(weatherImage).css("width","100px");
@@ -68,9 +68,9 @@ var iconCode = response.list[32].weather[0].icon;
 var iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png";
 weatherImage.attr("src",iconUrl);
 $(".five-day").append(weatherImage);
-})
+});
 
-}
+};
 
 //this has been programmed to show the colors of the uvi spectrum on the web page. It correllates with the html page where the actual UVI index is being displayed
 function uviCaller(){
@@ -117,7 +117,7 @@ function getStorage(){
 //this is the function that shows the 'today forecast'
 function getWeather(city){
   // query url that is used to get the information from the remote server
-  var queryURL ='https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=5c3e3f0f93f71de6ee35b8c58f101473';
+  var queryURL ='https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial&appid=5c3e3f0f93f71de6ee35b8c58f101473';
   // this is the ajax request that is being used to call the remote servers to get information from them using the provided url with my api key
   $.ajax(
     {
@@ -126,6 +126,7 @@ function getWeather(city){
     }
     // this is defining what happens after the call is made to the remote serer through ajax
   ).then(function(response){
+    console.log(response);
     // empty weather div
     $(".weather").empty();
     // paragraph tag with city name
@@ -134,7 +135,8 @@ function getWeather(city){
     // $(".weather").append(weather);
     $(".weather-name").append(response.name);
     $(".weather-date").append(moment().format('MMMM Do YYYY, h:mm:ss a'));
-    $(".weather-temp").append(response.weather[0].main);
+    $(".weather-temp").append(response.main.temp + ' degrees farenheit.');
+    // $(".weather-humidity").append(response.weather[0].main);
     // $(".weather-feelings").append("Feels like " + response.main.feels_like);
     // $(".weather").append("The humidity is " + response.main.humidity);
     // $(".weather").append("The wind speed is " + response.wind.speed);
