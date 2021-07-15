@@ -1,3 +1,9 @@
+.page-header{
+    color:white;
+    font-size:5rem;
+    font-weight:800;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
 .five-day-date,.five-day-date-2, .five-day-date-3, .five-day-date-4, .five-day-date-5 {
     font-weight: bold;
 }

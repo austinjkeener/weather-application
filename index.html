@@ -7,32 +7,36 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"">
     <link rel=" stylesheet" href="./assets/style/style.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,700;1,300&display=swap" rel="stylesheet">
 </head>
 
-<body style="background-image: url(./assets/clouds.jpg);">
+<body style="background-color:#22395A;">
     <main>
         <div class="container">
-            <section style="background-color: whitesmoke; padding: 20px; margin: 20px auto;">
-                <!--Seach for a city in the search bar below-->
-                <div class="row" style="margin:20px auto; background-color: white; padding: 50px;">
-                    <div class="col" style="display:inline-block;">
-                        <form class="form-inline my-2 my-lg-0" style="display: inline-block;">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0 submitbtn" type="submit">Search
-                                city</button>
-                        </form>
-                    </div>
-                    <!--Search history-->
-                    <div class="col" style="display:inline-block;">
-                        <!-- This is where the history for the searches goes -->
-                        <h1><a href="#">Search History</a></h1>
-                        <ol id="history">
-                        </ol>
-                    </div>
-                </div>
+            <section>
+                <h1 class="page-header">Weather</h1>
             </section>
             <!--Here is a display of weather conditions for the current day and the next day.-->
             <section style="background-color:whitesmoke; padding: 20px;">
+                                <!--Seach for a city in the search bar below-->
+                                <div class="row" style="margin:20px auto; background-color: white; padding: 50px;">
+                                    <div class="col" style="display:inline-block;">
+                                        <form class="form-inline my-2 my-lg-0" style="display: inline-block;">
+                                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                            <button class="btn btn-outline-success my-2 my-sm-0 submitbtn" type="submit">Search
+                                                city</button>
+                                        </form>
+                                    </div>
+                                    <!--Search history-->
+                                    <div class="col" style="display:inline-block;">
+                                        <!-- This is where the history for the searches goes -->
+                                        <h1><a href="#">Search History</a></h1>
+                                        <ol id="history">
+                                        </ol>
+                                    </div>
+                                </div>
                 <div class="col">
                     <div class="card mycard">
                         <div class="card-body">
