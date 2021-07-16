@@ -67,14 +67,6 @@ $(".five-day").append(weatherImage);
 
 };
 
-//this has been programmed to show the colors of the uvi spectrum on the web page. It correllates with the html page where the actual UVI index is being displayed
-function uviCaller(){
-$(".green").css("background-color", "#00ff00");
-$(".yellow").css("background-color", "#ffff00");
-$(".orange").css("background-color", "#ffa500");
-$(".red").css("background-color", "#ff0000");
-}
-
 // this is the programming for the submit button at the top of the web page. All of the ajax information is tied into this function so that when it is clicked, the defined parameters and variables are called and run to generate the information that i have specified in the algorithims used in my script
 function submitBtn(){
   // assigning the submit button class to a variable
@@ -121,13 +113,11 @@ function getWeather(city){
     }
     // this is defining what happens after the call is made to the remote serer through ajax
   ).then(function(response){
-    console.log(response);
     // empty weather div
     $(".weather").empty();
     // paragraph tag with city name
     var weather = $("<p>").text(response.name);
     // these are specified search params within the object to pull information requested in assignment
-    // $(".weather").append(weather);
     $(".weather-name").append(response.name);
     $(".weather-date").append(moment().format('MMMM Do YYYY, h:mm:ss a'));
     $(".weather-temp").append(response.main.temp + ' degrees farenheit.');
@@ -143,7 +133,6 @@ function getWeather(city){
   $(".mycard").append(weatherImage);
   })
 }
-
 // this is the function that is defining the uvi rating
 function uvi(lat,lon){
   // this is the query url that has my api key and defines what I want to search for on their website. I have also concatonated the lat and lon into the url. the information that defines those two variables comes from the getWeather(); function.
@@ -160,7 +149,6 @@ $.ajax({
 }
 // Function calls
 // these are the functions being called
-uviCaller();
 submitBtn();
 getStorage();
 // Event listeners
