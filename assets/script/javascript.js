@@ -67,7 +67,7 @@ $(".five-day").append(weatherImage);
 
 };
 
-// this is the programming for the submit button at the top of the web page. All of the ajax information is tied into this function so that when it is clicked, the defined parameters and variables are called and run to generate the information that i have specified in the algorithims used in my script
+// this is the programming for the submit button at the top of the web page. All of the ajax information is tied into this function so that when it is clicked, the defined parameters and variables are called and run to generate the information that i have specified in the algorithims used in my script.
 function submitBtn(){
   // assigning the submit button class to a variable
   var submitBtn = document.querySelector(".submitbtn");
